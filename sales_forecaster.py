@@ -50,7 +50,7 @@ def load_sales_data(file_path='sales_data.csv'):
         df['sales_amount'] = df['sales_amount'].clip(lower=1000)
         return df
 
-def prepare_time_series(df, frequency='M'):
+def prepare_time_series(df, frequency='ME'):
     """
     Aggregate sales data by time period
     """
@@ -228,7 +228,7 @@ def main():
     
     # Load and prepare data
     df = load_sales_data()
-    ts_data = prepare_time_series(df, frequency='M')
+    ts_data = prepare_time_series(df, frequency='ME')
     
     # Calculate metrics
     metrics = calculate_sales_metrics(ts_data)
